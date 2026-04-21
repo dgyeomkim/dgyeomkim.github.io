@@ -57,7 +57,7 @@ yandex_site_verification :
 
 # Social Sharing
 mastodon:
-  username               : "fosstodon.org/@jayrobw"
+  username               : #"fosstodon.org/@jayrobw"
 twitter:
   username               : 
 facebook:
@@ -87,13 +87,13 @@ author:
   name             : "Daegyeom Kim"
   avatar           : "profile.png"
   bio              : "Research Professor"
-  location         :
-  employer         :
+  location         : "Neuroscience Research Institute"
+  employer         : "Gachon University"
   pubmed           :
   orcid            : "https://orcid.org/0000-0002-2234-2955"
   googlescholar    : "https://scholar.google.com/citations?user=036VSGoAAAAJ&hl=ko"
   email            : "dgyeom.kim@gmail.com"
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     : "https://www.researchgate.net/profile/Daegyeom-Kim?ev=hdr_xprf" # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
@@ -102,7 +102,7 @@ author:
   facebook         :
   foursquare       :
   github           : "dgyeomkim"
-  gitlab           : "dgyeomkim"
+  gitlab           : #"dgyeomkim"
   google_plus      :
   keybase          :
   instagram        :
