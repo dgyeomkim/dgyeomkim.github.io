@@ -1,3 +1,19 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+{% if author.googlescholar %}
+  <p style="margin-bottom: 20px;">You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u></p>
+{% endif %}
+
+{% include base_path %}
+
+{% comment %} 데이터를 연도별로 묶어주는 필수 코드입니다 {% endcomment %}
+{% assign postsByYear = site.publications | group_by_exp: "post", "post.date | date: '%Y'" %}
+
 <div style="text-align: justify; font-size: 0.93em;">
 
 {% for year in postsByYear reversed %}
@@ -14,7 +30,7 @@
           {% if post.teaser %}
             <img src="{{ post.teaser | relative_url }}" alt="teaser" style="width: 100%; border-radius: 4px; border: 1px solid #eee;">
           {% else %}
-            {% comment %} 이미지가 없을 때 보여줄 기본 아이콘이나 빈 칸 {% endcomment %}
+            {% comment %} 이미지가 없을 때 보여줄 기본 빈 칸 {% endcomment %}
             <div style="width: 150px; height: 100px; background: #f9f9f9; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8em;">No Image</div>
           {% endif %}
         </div>
@@ -30,3 +46,7 @@
 {% endfor %}
 
 </div>
+
+<p style="font-size: 0.8em; margin-top: 60px; color: #777; border-top: 1px inset #eee; padding-top: 20px;">
+  <sup>*</sup> Equal authorship
+</p>
