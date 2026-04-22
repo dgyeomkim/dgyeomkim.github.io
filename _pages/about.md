@@ -11,7 +11,7 @@ redirect_from:
 <div style="text-align: justify;" markdown="1">
 
 Welcome! I am a researcher and data scientist focused on neuroimaging and digital health.
-I am a Research Professor at the [Neuroscience Research Institute (NRI), Gachon University](http://nri.gachon.ac.kr/web/home.php?go=main),
+I am a Research Professor at the [Neuroscience Research Institute (NRI)](http://nri.gachon.ac.kr/web/home.php?go=main), Gachon University,
 and an affiliated researcher with the [Bio-nano Research Center](https://www.gachon.ac.kr/sites/KRIU/index.do). My work centers on developing
 computational frameworks to analyze brain network alterations and glymphatic function
 in aging and neurodegenerative disorders.
