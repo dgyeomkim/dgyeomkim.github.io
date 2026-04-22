@@ -12,7 +12,7 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* archive-single.html 내부에서 자동 생성되는 모든 태그의 상단 여백을 강제로 제거합니다 */
+  /* 텍스트 사이의 불필요한 여백을 제거하여 리스트의 밀도를 높입니다 */
   .pub-text-content .archive__item,
   .pub-text-content .archive__item-title,
   .pub-text-content h1,
@@ -20,36 +20,24 @@ author_profile: true
   .pub-text-content h3 {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-bottom: 5px !important;
   }
 </style>
 
 {% assign postsByYear = site.publications | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-<div style="text-align: justify; font-size: 0.93em;">
+<div style="text-align: justify; font-size: 0.95em;">
 
 {% for year in postsByYear reversed %}
   <section class="list__item">
-    <h1 id="{{ year.name }}" style="margin-top: 40px; margin-bottom: 20px; font-size: 1.7em; border-bottom: 1px solid #ccc; padding-bottom: 5px;">
+    <h1 id="{{ year.name }}" style="margin-top: 40px; margin-bottom: 25px; font-size: 1.7em; border-bottom: 1px solid #ccc; padding-bottom: 5px; color: #333;">
       {{ year.name }}
     </h1>
     
     {% for post in year.items reversed %}
-      <div style="display: flex; align-items: flex-start; margin-bottom: 30px; gap: 20px;">
-        
-        {% comment %} 좌측 이미지 영역 {% endcomment %}
-        <div style="flex: 0 0 150px; max-width: 150px;">
-          {% if post.teaser %}
-            <img src="{{ post.teaser | relative_url }}" alt="teaser" style="width: 100%; border-radius: 4px;">
-          {% else %}
-            <div style="width: 150px; height: 100px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8em;">No Image</div>
-          {% endif %}
-        </div>
-
-        {% comment %} 우측 텍스트 영역 (미세 조정을 위해 margin-top: -4px 추가) {% endcomment %}
-        <div class="pub-text-content" style="flex: 1; margin-top: -4px;">
-          {% include archive-single.html %}
-        </div>
-
+      {% comment %} 이미지를 제거하고 텍스트만 깔끔하게 나열합니다 {% endcomment %}
+      <div class="pub-text-content" style="margin-bottom: 30px; padding-left: 5px;">
+        {% include archive-single.html %}
       </div>
     {% endfor %}
   </section>
