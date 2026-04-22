@@ -12,10 +12,14 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* 우측 텍스트 영역의 제목 상단 여백을 강제로 제거하여 이미지의 상단과 딱 맞춥니다 */
+  /* archive-single.html 내부에서 자동 생성되는 모든 태그의 상단 여백을 강제로 제거합니다 */
+  .pub-text-content .archive__item,
+  .pub-text-content .archive__item-title,
+  .pub-text-content h1,
   .pub-text-content h2, 
   .pub-text-content h3 {
     margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 </style>
 
@@ -35,16 +39,14 @@ author_profile: true
         {% comment %} 좌측 이미지 영역 {% endcomment %}
         <div style="flex: 0 0 150px; max-width: 150px;">
           {% if post.teaser %}
-            {% comment %} 테두리(border)를 제거했습니다 {% endcomment %}
             <img src="{{ post.teaser | relative_url }}" alt="teaser" style="width: 100%; border-radius: 4px;">
           {% else %}
-            {% comment %} 이미지가 없을 때의 박스 테두리도 원치 않으시면 border를 빼시면 됩니다 {% endcomment %}
             <div style="width: 150px; height: 100px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8em;">No Image</div>
           {% endif %}
         </div>
 
-        {% comment %} 우측 텍스트 영역 {% endcomment %}
-        <div class="pub-text-content" style="flex: 1;">
+        {% comment %} 우측 텍스트 영역 (미세 조정을 위해 margin-top: -4px 추가) {% endcomment %}
+        <div class="pub-text-content" style="flex: 1; margin-top: -4px;">
           {% include archive-single.html %}
         </div>
 
