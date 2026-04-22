@@ -8,21 +8,16 @@ redirect_from:
   - /about.html
 ---
 
-Welcome! I am a data scientist applying machine learning tools and causal
-inference techniques to remote sensing data. I am an affiliated
-researcher with the [Data-driven Analysis of Peace Project](https://dapp-lab.org)
-and a research collaborator with the 
-[Research on International Policy Implementation Lab](https://bridgingthegapproject.org/ripil).
+Welcome! I am a researcher and data scientist focused on neuroimaging and digital health.
+I am a Research Professor at the **Neuroscience Research Institute, Gachon University**, 
+and an affiliated researcher with the **Bio-nano Research Center**. 
 
-I earned my PhD in Political Science from the
-[University *of* North Carolina *at* Chapel Hill](https://www.unc.edu) and my
-BA in Political Science from [Haverford College](https://www.haverford.edu).
-My academic work has been [published](publications) in the
-*American Political Science Review*, *International Studies Quarterly*,
-*Conflict Management and Peace Science*, and
-*Political Science Research and Methods*, among other outlets. This
-[research](research) explores the causes and consequences of political violence
-using a broad variety of methods such as latent variable models, geospatial
-analysis, and big data. I have [taught](teaching) quantitative methodology and
-international relations, and am a certified instructor with
-[The Carpentries](https://carpentries.org).
+My work centers on developing computational frameworks to analyze brain network alterations
+and glymphatic function in aging and neurodegenerative disorders.
+
+I earned my integrated Ph.D. and B.S. in Electronics and Information Engineering from **Korea University**.
+My work focuses on quantifying network properties such as **brain resilience** and **cognitive reserve** to understand
+how the brain maintains function despite pathology. I also apply **graph deep learning** and **super-resolution**
+techniques to improve the precision of neuroimage analysis. By combining brain connectomics with **multi-modal MRI
+and PET**, I aim to build automated pipelines that process complex clinical and wearable sensor data into clear, 
+evidence-based results.
