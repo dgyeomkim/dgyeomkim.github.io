@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-<div style="text-align: justify;">
-
 Welcome! I am a researcher and data scientist focused on neuroimaging and digital health.
 I am a Research Professor at the [Neuroscience Research Institute (NRI), Gachon University](http://nri.gachon.ac.kr/web/home.php?go=main),
 and an affiliated researcher with the [Bio-nano Research Center](https://www.gachon.ac.kr/sites/KRIU/index.do). My work centers on developing
@@ -29,4 +27,3 @@ with clinical records to extract physiological biomarkers for sleep and brain cl
 I build automated workflows using **MATLAB, Python, and R**, and have extensive experience
 in large-scale data processing with neuroimaging suites like **SPM, FSL, and FreeSurfer**.
 
-</div>
