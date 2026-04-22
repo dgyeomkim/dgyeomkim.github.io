@@ -37,11 +37,11 @@ author_profile: true
       <div style="display: flex; align-items: flex-start; margin-bottom: 30px; gap: 20px;">
         
         {% comment %} 좌측 이미지 영역 {% endcomment %}
-        <div style="flex: 0 0 150px; max-width: 150px;">
+        <div style="flex: 0 0 150px; max-width: 200px;">
           {% if post.teaser %}
             <img src="{{ post.teaser | relative_url }}" alt="teaser" style="width: 100%; border-radius: 4px;">
           {% else %}
-            <div style="width: 150px; height: 100px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8em;">No Image</div>
+            <div style="width: 200px; height: 100px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; color: #999; font-size: 0.8em;">No Image</div>
           {% endif %}
         </div>
 
