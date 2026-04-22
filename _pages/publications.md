@@ -12,7 +12,7 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* archive-single.html 내부에서 자동 생성되는 모든 태그의 상단 여백을 강제로 제거합니다 */
+  /* 중앙 정렬 시 텍스트 블록 내부의 불필요한 여백을 제거하여 정렬의 정확도를 높입니다 */
   .pub-text-content .archive__item,
   .pub-text-content .archive__item-title,
   .pub-text-content h1,
@@ -20,6 +20,7 @@ author_profile: true
   .pub-text-content h3 {
     margin-top: 0 !important;
     padding-top: 0 !important;
+    margin-bottom: 5px !important;
   }
 </style>
 
@@ -34,9 +35,10 @@ author_profile: true
     </h1>
     
     {% for post in year.items reversed %}
-      <div style="display: flex; align-items: flex-start; margin-bottom: 30px; gap: 20px;">
+      {% comment %} align-items를 center로 변경하여 수직 중앙 정렬을 적용합니다 {% endcomment %}
+      <div style="display: flex; align-items: center; margin-bottom: 35px; gap: 20px;">
         
-        {% comment %} 좌측 이미지 영역 {% endcomment %}
+        {% comment %} 좌측 이미지 영역 (너비 150px 유지) {% endcomment %}
         <div style="flex: 0 0 150px; max-width: 150px;">
           {% if post.teaser %}
             <img src="{{ post.teaser | relative_url }}" alt="teaser" style="width: 100%; border-radius: 4px;">
@@ -45,8 +47,8 @@ author_profile: true
           {% endif %}
         </div>
 
-        {% comment %} 우측 텍스트 영역 (미세 조정을 위해 margin-top: -4px 추가) {% endcomment %}
-        <div class="pub-text-content" style="flex: 1; margin-top: -4px;">
+        {% comment %} 우측 텍스트 영역 {% endcomment %}
+        <div class="pub-text-content" style="flex: 1;">
           {% include archive-single.html %}
         </div>
 
