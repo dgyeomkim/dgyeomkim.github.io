@@ -11,22 +11,24 @@ author_profile: true
 
 {% include base_path %}
 
-<div style="text-align: justify;">
+<div style="text-align: justify; font-size: 0.95em;">
 
 {% assign postsByYear = site.publications | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 {% for year in postsByYear reversed %}
   <div class="list__item">
-    {% comment %} 연도 크기를 키우고 스타일을 강조했습니다 {% endcomment %}
-    <h1 id="{{ year.name }}" style="margin-top: 60px; margin-bottom: 20px; font-size: 2em; border-bottom: 2px solid #333; padding-bottom: 10px;">
+    {% comment %} 상단 여백을 줄이고 연도 크기를 조정했습니다 {% endcomment %}
+    <h1 id="{{ year.name }}" style="margin-top: 30px; margin-bottom: 15px; font-size: 1.8em; border-bottom: 2px solid #333; padding-bottom: 8px;">
       {{ year.name }}
     </h1>
     
-    {% for post in year.items reversed %}
-      <div style="margin-bottom: 15px;">
-        {% include archive-single.html %}
-      </div>
-    {% endfor %}
+    <div style="line-height: 1.5;">
+      {% for post in year.items reversed %}
+        <div style="margin-bottom: 20px;">
+          {% include archive-single.html %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 {% endfor %}
 
