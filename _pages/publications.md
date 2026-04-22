@@ -11,20 +11,25 @@ author_profile: true
 
 {% include base_path %}
 
-{% comment %} 연도별로 그룹화하고 최신 연도순으로 정렬 {% endcomment %}
+<div style="text-align: justify;">
+
 {% assign postsByYear = site.publications | group_by_exp: "post", "post.date | date: '%Y'" %}
 
 {% for year in postsByYear reversed %}
   <div class="list__item">
-    <h2 class="archive__subtitle" style="border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 50px;">
+    {% comment %} 연도 크기를 키우고 스타일을 강조했습니다 {% endcomment %}
+    <h1 id="{{ year.name }}" style="margin-top: 60px; margin-bottom: 20px; font-size: 2em; border-bottom: 2px solid #333; padding-bottom: 10px;">
       {{ year.name }}
-    </h2>
+    </h1>
     
-    {% comment %} 해당 연도 내의 논문들을 최신 날짜순으로 정렬 {% endcomment %}
     {% for post in year.items reversed %}
-      {% include archive-single.html %}
+      <div style="margin-bottom: 15px;">
+        {% include archive-single.html %}
+      </div>
     {% endfor %}
   </div>
 {% endfor %}
 
-<p style="font-size: 0.8em; margin-top: 40px;"><sup>*</sup> Equal authorship</p>
+</div>
+
+<p style="font-size: 0.8em; margin-top: 50px;"><sup>*</sup> Equal authorship</p>
