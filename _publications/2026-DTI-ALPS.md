@@ -6,5 +6,5 @@ date: 2026-01-24
 venue: 'European Journal of Nuclear Medicine and Molecular Imaging'
 paperurl: "/files/pdf/research/2026_KoJ_DTI_ALPS_CoA.pdf"
 link: 'https://doi.org/10.1007/s00259-025-07756-4'
-citation: "Ko, J., Son, G., Seo, H. E., Cho, J., Kim, J. Y., Lee, S. Y., Kim, D., Park, S., Park, K. H., Lockhart, S. N., Kim, D. H., & Noh, Y. (2026). Tau PET imaging as a mediator between glymphatic dysfunction and cognitive decline: a cross-sectional and longitudinal study. <i>European journal of nuclear medicine and molecular imaging</i>, 53(5), 3391–3407. https://doi.org/10.1007/s00259-025-07756-4"
+citation: "Ko J, Son G, Seo HE, Cho J, Kim JY, Lee SY, Kim D, Park S, Park KH, Lockhart SN, Kim DH, Noh Y. <i>European journal of nuclear medicine and molecular imaging</i>, 53(5), 3391–3407"
 ---
