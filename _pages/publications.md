@@ -25,7 +25,7 @@ author_profile: true
 
 {% assign postsByYear = site.publications | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-<div style="text-align: justify; font-size: 0.93em;">
+<div style="text-align: justify; font-size: 0.83em;">
 
 {% for year in postsByYear reversed %}
   <section class="list__item">
