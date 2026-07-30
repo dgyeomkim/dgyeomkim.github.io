@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>논문 — 이름</title>
+<title>Publications — Daegyeom Kim</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -11,9 +11,10 @@
 <body>
 
 <nav class="site-nav">
-  <span class="brand"><a href="index.html" style="color:inherit;">이름</a></span>
+  <span class="brand"><a href="index.html" style="color:inherit;">Daegyeom Kim</a></span>
   <div class="links">
     <a href="research.html">연구</a>
+    <a href="news.html">News</a>
     <a href="blog.html">블로그</a>
     <a href="publications.html">논문</a>
     <a href="cv.html">CV</a>
@@ -22,9 +23,9 @@
 
 <main class="wrap">
   <div class="page-header">
-    <h1>논문 · Publications</h1>
+    <h1>Publications</h1>
     <p style="color: var(--ink-faint); font-size: 13px; font-style: italic;">
-      <code>data/publications.json</code> 파일만 수정하면 이 페이지에 자동 반영됩니다.
+      국제 저널 11편 · 국내 저널 2편 · 국제 학회 12편 · 국내 학회 20편 · 투고/준비중 7편
     </p>
   </div>
 
@@ -32,6 +33,7 @@
     <button data-filter="all" class="active">전체</button>
     <button data-filter="journal">저널</button>
     <button data-filter="conference">학회</button>
+    <button data-filter="in-progress">투고/준비중</button>
   </div>
 
   <div id="pub-list">
@@ -79,13 +81,15 @@ function render() {
 
   let html = '';
   Object.keys(byYear).sort((a, b) => b - a).forEach(year => {
-    html += `<div class="pub-year">${year}</div>`;
+    const yearLabel = year === '9999' ? '투고 / 준비중' : year;
+    html += `<div class="pub-year">${yearLabel}</div>`;
     byYear[year].forEach(p => {
+      const authorsHtml = p.authors.replace(/D Kim/g, '<strong>D Kim</strong>');
       html += `
         <div class="pub-item">
           <div class="pub-venue-line">${p.venue}${p.type === 'conference' ? ' · Conference' : ''}</div>
           <div class="pub-title">${p.title}</div>
-          <div class="pub-authors">${p.authors}</div>
+          <div class="pub-authors">${authorsHtml}</div>
           ${p.abstract ? `<p class="pub-abstract">${p.abstract}</p>` : ''}
           <div class="pub-links">
             ${p.pdf ? `<a href="${p.pdf}">PDF</a>` : ''}
