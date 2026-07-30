@@ -13,7 +13,7 @@
   --line: #DEDAD2;
 
   --serif: "Lora", Georgia, "Times New Roman", serif;
-  --max-w: 720px;
+  --max-w: 920px;
 }
 
 * { box-sizing: border-box; }
@@ -86,7 +86,7 @@ h1.name {
 .tagline {
   font-size: 1.05rem;
   color: var(--ink-soft);
-  max-width: 56ch;
+  max-width: 65ch;
   margin: 0 0 26px;
 }
 .hero-links { display: flex; gap: 20px; flex-wrap: wrap; }
