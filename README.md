@@ -11,6 +11,7 @@
 | `research.html` | 연구 상세 (프로젝트별 설명) |
 | `publications.html` | 논문 목록 — `data/publications.json`을 읽어서 자동 렌더링 |
 | `cv.html` | CV — PDF 다운로드 링크 + 학력/경력/스킬/수상 |
+| `news.html` | 연도별 News 로그 (발표/수상/미디어 등 시간순 기록) |
 | `blog.html` + `posts/*.html` | 블로그 목록과 개별 글 |
 
 ## 1. 채워야 할 것들
@@ -18,6 +19,7 @@
 - `index.html`, `cv.html`, `research.html`: 이름, 이메일, Google Scholar/GitHub 링크
 - `data/publications.json`: 논문 정보 (title, authors, venue, year, type: "journal"|"conference", pdf/doi/code 링크)
 - `files/cv.pdf`: 실제 CV PDF 파일을 이 경로에 두면 CV 페이지의 다운로드 버튼이 작동합니다
+- `news.html`: 새 소식은 해당 연도의 `<ul class="news-list">` 맨 위에 `<li><span class="news-date">YYYY. M.</span> 내용</li>` 한 줄 추가. 연도가 바뀌면 `<div class="news-year-head">연도</div>`를 새로 추가
 - 원하는 색/폰트는 `styles.css` 상단 `:root` 변수만 바꾸면 전체에 반영됩니다
 
 ## 기존 Jekyll(academicpages) 저장소에서 이전하는 경우

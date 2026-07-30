@@ -277,3 +277,45 @@ footer .links a:hover { color: var(--accent); }
   .post-row { display: block; }
   .cv-entry { flex-direction: column; gap: 4px; }
 }
+
+/* ---------- Plain bullet lists (About / Research Interests) ---------- */
+.bio-list, .interest-list, .news-list {
+  margin: 0;
+  padding-left: 22px;
+}
+.bio-list li, .interest-list li {
+  margin-bottom: 8px;
+  color: var(--ink-soft);
+}
+.interest-group { margin-bottom: 28px; }
+.interest-group:last-child { margin-bottom: 0; }
+.interest-group h3 {
+  font-size: 1.02rem;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+
+/* ---------- News log ---------- */
+.news-list { padding-left: 0; list-style: none; }
+.news-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+}
+.news-list li:first-child { border-top: 1px solid var(--line); }
+.news-date {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+.news-year-head {
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--ink-faint);
+  margin: 34px 0 4px;
+}
+.news-year-head:first-child { margin-top: 0; }
