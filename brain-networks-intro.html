@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>뇌를 지도가 아니라 "네트워크"로 본다면 무엇이 달라질까? — 이름</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand"><a href="../index.html" style="color:inherit;">/// 이름</a></span>
+  <div class="links">
+    <a href="../research.html">연구</a>
+    <a href="../blog.html">블로그</a>
+    <a href="../publications.html">논문</a>
+    <a href="../cv.html">CV</a>
+  </div>
+</nav>
+
+<main class="wrap post-page">
+  <a class="back" href="../blog.html">← 블로그로</a>
+
+  <h1>뇌를 지도가 아니라 "네트워크"로 본다면 무엇이 달라질까?</h1>
+  <div class="post-meta-line">Textbook Study · Fundamentals of Brain Network Analysis, Ch.1 (Fornito, Zalesky, Bullmore)</div>
+
+  <div class="post-body">
+    <blockquote>100억 개의 뉴런과 100조 개의 시냅스로 이루어진 뇌를, 쾨니히스베르크의 다리 문제를 풀던 수학이 어떻게 설명해주는가.</blockquote>
+
+    <h2>이런 상황을 생각해보세요</h2>
+    <p>
+      뇌를 이해하려는 두 가지 접근법이 있다고 해봅시다. 하나는 "이 부위는 언어를 담당하고,
+      저 부위는 시각을 담당한다"는 식으로 각 영역의 역할을 하나하나 밝히는 방법입니다.
+      다른 하나는 애초에 "역할"이라는 게 특정 영역 하나가 아니라, 영역들 사이의 연결 패턴
+      자체에서 나온다고 보는 방법입니다.
+    </p>
+    <p>
+      20세기 초 신경과학자들은 대부분 전자의 방식으로 뇌를 연구했습니다. 그런데 최근
+      20~30년 사이, 후자의 관점 — 뇌를 연결망(network)으로 보는 관점 — 이 폭발적으로
+      성장했습니다. 이 분야를 커넥토믹스(connectomics)라고 부릅니다.
+    </p>
+
+    <h2>핵심 아이디어: 뇌를 어떻게 "그래프"로 그릴까?</h2>
+    <p>
+      가장 단순하게, 뇌의 각 영역(또는 뉴런)을 점(노드, node)으로, 그 사이의 연결을
+      선(엣지, edge)으로 그리면 됩니다. 이렇게 하면 뉴런의 생김새나 정확한 위치 같은
+      세부사항은 다 버리고, "무엇이 무엇과 연결되어 있는가"라는 순수한 연결 구조(위상,
+      topology)만 남습니다.
+    </p>
+    <p>
+      이 아이디어는 사실 신경과학보다 훨씬 오래된 수학에서 왔습니다. 1735년, 스위스
+      수학자 오일러는 프로이센의 도시 쾨니히스베르크에 있는 7개의 다리를 "한 번씩만
+      건너서 도시를 한 바퀴 돌 수 있는가?"라는 문제를 풀면서, 땅덩어리를 점으로, 다리를
+      선으로 바꿔 그렸습니다. 이게 그래프 이론의 시작이었습니다.
+    </p>
+
+    <div class="callout">💡 핵심 포인트: 세부사항을 과감히 버리고 "연결 구조"만 남기는 것이 그래프 이론의 힘입니다.</div>
+
+    <p>이후 수학자들은 이 그래프를 이용해 여러 재미있는 모델을 만들었습니다.</p>
+    <ul>
+      <li><strong>랜덤 그래프(Erdős–Rényi, 1950년대)</strong> — 노드들 사이를 완전히 무작위 확률로 연결하면 어떻게 될까?</li>
+      <li><strong>Small-world 네트워크(Watts-Strogatz, 1998)</strong> — 규칙적인 격자에서 몇 개의 연결만 무작위로 바꿔주면, "짧은 이동 거리"와 "높은 군집성"을 동시에 가지는 네트워크가 나타난다는 발견.</li>
+      <li><strong>Scale-free 네트워크(Barabási-Albert)</strong> — 이미 연결이 많은 노드에 새 연결이 몰리는 "부익부" 현상, 소수의 초연결 허브(hub)가 생겨남.</li>
+    </ul>
+
+    <h2>실제로 어디에 쓰이나</h2>
+    <p>
+      허브는 대사적으로 "비싼" 부위입니다. 알츠하이머병에서 아밀로이드 단백질이 특히
+      잘 쌓이는 곳도 이 허브 영역입니다. 여러 신경퇴행성 질환에서 병리가 연결된 뇌
+      영역들을 따라 퍼져나간다는 증거들도 쌓이고 있습니다.
+    </p>
+
+    <h2>한 줄 정리</h2>
+    <blockquote>"뇌는 100억 개의 부품이 아니라, 그 부품들이 어떻게 연결되어 있는지를 봐야 이해할 수 있는 네트워크다."</blockquote>
+
+    <p style="font-family: var(--mono); font-size: 12.5px; color: var(--ink-faint); margin-top: 40px;">
+      📎 Fundamentals of Brain Network Analysis, Chapter 1 — Alex Fornito, Andrew Zalesky, Edward Bullmore (2016, Academic Press)
+    </p>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>© 2026.</p>
+</footer>
+
+</body>
+</html>

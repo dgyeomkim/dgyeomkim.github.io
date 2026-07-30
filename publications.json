@@ -1,0 +1,24 @@
+[
+  {
+    "title": "논문 제목을 여기에 입력하세요",
+    "authors": "이름, 공동저자 A, 공동저자 B",
+    "venue": "저널명 또는 학회명",
+    "year": 2026,
+    "type": "journal",
+    "abstract": "1~2문장 초록 요약.",
+    "pdf": "",
+    "doi": "",
+    "code": ""
+  },
+  {
+    "title": "두 번째 논문 제목",
+    "authors": "이름, 공동저자 C",
+    "venue": "학회명 (Conference)",
+    "year": 2025,
+    "type": "conference",
+    "abstract": "1~2문장 초록 요약.",
+    "pdf": "",
+    "doi": "",
+    "code": ""
+  }
+]

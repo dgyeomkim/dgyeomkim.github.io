@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>논문 — 이름</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <span class="brand"><a href="index.html" style="color:inherit;">/// 이름</a></span>
+  <div class="links">
+    <a href="research.html">연구</a>
+    <a href="blog.html">블로그</a>
+    <a href="publications.html">논문</a>
+    <a href="cv.html">CV</a>
+  </div>
+</nav>
+
+<main class="wrap">
+  <div class="page-header">
+    <h1>논문 · Publications</h1>
+    <p style="color: var(--ink-faint); font-family: var(--mono); font-size: 13px;">
+      <code>data/publications.json</code> 파일만 수정하면 이 페이지에 자동 반영됩니다.
+    </p>
+  </div>
+
+  <div class="pub-filters" id="filters">
+    <button data-filter="all" class="active">전체</button>
+    <button data-filter="journal">저널</button>
+    <button data-filter="conference">학회</button>
+  </div>
+
+  <div id="pub-list">
+    <p class="pub-empty">불러오는 중...</p>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>© 2026.</p>
+</footer>
+
+<script>
+let allPubs = [];
+let currentFilter = 'all';
+
+async function loadPubs() {
+  try {
+    const res = await fetch('data/publications.json');
+    allPubs = await res.json();
+    render();
+  } catch (e) {
+    document.getElementById('pub-list').innerHTML =
+      '<p class="pub-empty">publications.json을 불러오지 못했습니다. ' +
+      '로컬에서 file:// 로 열면 브라우저가 fetch를 막을 수 있어요 — ' +
+      '<code>python -m http.server</code> 로 로컬 서버를 띄우거나, ' +
+      'GitHub Pages 배포 후 확인해보세요.</p>';
+  }
+}
+
+function render() {
+  const list = document.getElementById('pub-list');
+  const filtered = currentFilter === 'all'
+    ? allPubs
+    : allPubs.filter(p => p.type === currentFilter);
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<p class="pub-empty">아직 등록된 항목이 없습니다.</p>';
+    return;
+  }
+
+  const byYear = {};
+  filtered.sort((a, b) => b.year - a.year).forEach(p => {
+    (byYear[p.year] = byYear[p.year] || []).push(p);
+  });
+
+  let html = '';
+  Object.keys(byYear).sort((a, b) => b - a).forEach(year => {
+    html += `<div class="pub-year">${year}</div>`;
+    byYear[year].forEach(p => {
+      html += `
+        <div class="pub-item">
+          <div class="pub-venue-line">${p.venue}${p.type === 'conference' ? ' · Conference' : ''}</div>
+          <div class="pub-title">${p.title}</div>
+          <div class="pub-authors">${p.authors}</div>
+          ${p.abstract ? `<p class="pub-abstract">${p.abstract}</p>` : ''}
+          <div class="pub-links">
+            ${p.pdf ? `<a href="${p.pdf}">PDF</a>` : ''}
+            ${p.doi ? `<a href="${p.doi}">DOI</a>` : ''}
+            ${p.code ? `<a href="${p.code}">Code</a>` : ''}
+          </div>
+        </div>`;
+    });
+  });
+  list.innerHTML = html;
+}
+
+document.getElementById('filters').addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  currentFilter = e.target.dataset.filter;
+  render();
+});
+
+loadPubs();
+</script>
+
+</body>
+</html>
