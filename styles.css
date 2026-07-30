@@ -319,3 +319,34 @@ footer .links a:hover { color: var(--accent); }
   margin: 34px 0 4px;
 }
 .news-year-head:first-child { margin-top: 0; }
+
+/* ---------- Plain-page mode (homepage, mirrors a bare academic page) ---------- */
+.plain-page .masthead { padding: 40px 0 26px; }
+.plain-page .masthead h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0 0 6px;
+}
+.plain-page .masthead .position { color: var(--ink-soft); font-size: 0.98rem; margin: 0 0 10px; }
+.plain-page .masthead .links-line { font-size: 0.95rem; color: var(--ink-soft); }
+.plain-page .masthead .links-line a { margin: 0 2px; }
+
+.plain-page section {
+  border-top: none;
+  padding: 22px 0;
+}
+.plain-page section + section { border-top: 1px solid var(--line); }
+.plain-page h2.section-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0 0 14px;
+}
+.plain-page .news-list li,
+.plain-page .pub,
+.plain-page .post-row {
+  border: none;
+  padding: 4px 0;
+}
+.plain-page .pub, .plain-page .post-row { padding: 10px 0; }
