@@ -256,8 +256,17 @@ footer .links a:hover { color: var(--accent); }
 .cv-download:hover { background: var(--ink); color: var(--paper); border-bottom: 1px solid var(--ink); }
 
 /* ---------- Research (deep dive) ---------- */
-.research-project { padding: 28px 0; border-bottom: 1px solid var(--line); }
+.research-project {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 28px;
+  align-items: start;
+}
 .research-project:first-of-type { border-top: 1px solid var(--line); }
+.research-project .rp-icon { margin-bottom: 10px; }
+.research-project .rp-icon svg { width: 100%; height: auto; display: block; }
 .research-project .rp-tag {
   font-size: 12.5px;
   letter-spacing: 0.1em;
@@ -268,6 +277,11 @@ footer .links a:hover { color: var(--accent); }
 .research-project h3 { font-size: 1.2rem; font-weight: 600; margin: 0 0 10px; }
 .research-project p { font-size: 0.95rem; }
 .research-project .rp-collab { font-size: 12.5px; color: var(--ink-faint); margin-top: 8px;  }
+
+@media (max-width: 640px) {
+  .research-project { grid-template-columns: 1fr; }
+  .research-project .rp-icon { width: 90px; }
+}
 
 @media (max-width: 640px) {
   .post-row { display: block; }
